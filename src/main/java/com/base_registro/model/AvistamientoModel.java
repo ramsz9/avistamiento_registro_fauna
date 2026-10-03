@@ -15,6 +15,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import com.base_registro.dto.AvistamientoConsultaDto;
 
 @Data
 @Builder
@@ -35,4 +36,11 @@ public class AvistamientoModel {
     @CreationTimestamp
     private LocalDateTime fechaRegistro;
 
+    public AvistamientoConsultaDto toDto() {
+        return new AvistamientoConsultaDto(id, especie, ubicacionGeografica, fechaAvistamiento, observaciones,
+                fechaRegistro);
+    }
+
 }
+
+
